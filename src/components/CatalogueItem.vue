@@ -1,20 +1,54 @@
 <template>
     <div class="catalogue-item">
-        item
+        <div class="catalogue-item__img-block">
+            <img
+                    :src=" require('../assets/img/' + product_data.image) "
+                    alt=""
+                    class="catalogue-item__img"
+            >
+        </div>
+        <p class="catalogue-item__title">
+            {{product_data.name}}
+        </p>
+        <p class="catalogue-item__price">
+            Price: {{product_data.price}} грн.
+        </p>
+        <button
+                class="catalogue-item__btn"
+                @click="sendDataToParent"
+        >
+            Add to card
+        </button>
     </div>
 </template>
 
 <script>
     export default {
-        name: "CatalogueItem"
+        name: "CatalogueItem",
+        props: {
+            product_data: {
+                type: Object,
+                default() {
+                    return {}
+                }
+            }
+        },
+        methods: {
+            sendDataToParent() {
+                this.$emit('sendDataToParent', this.product_data.article)
+            }
+        }
     }
 </script>
 
 <style lang="scss">
-    .catalogue-item{
+    .catalogue-item {
         border: 1px solid $color-green;
         padding: 20px;
-        width: calc(25% - 20px);
+        width: calc(100% / 3 - 20px);
         margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 </style>

@@ -1,19 +1,19 @@
 <template>
-  <div id="app">
-    <MainWrapper />
-  </div>
+    <div id="app">
+        <MainWrapper/>
+    </div>
 </template>
 
 <script>
-  import MainWrapper from "./components/MainWrapper"
+    import MainWrapper from "./components/MainWrapper"
 
-export default {
-  
-  name: 'App',
-  components: {
-    MainWrapper
-  }
-}
+    export default {
+
+        name: 'App',
+        components: {
+            MainWrapper
+        }
+    }
 </script>
 
 <style>

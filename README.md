@@ -1,4 +1,4 @@
-# catalogue-modile
+# vue-online-shop
 
 ## Project setup
 ```

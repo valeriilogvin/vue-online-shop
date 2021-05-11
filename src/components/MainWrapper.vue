@@ -1,10 +1,10 @@
 <template>
-    <div class="main-wrapper">
+    <section class="main-wrapper">
         <div class="container">
             <Catalogue/>
             <Cart/>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
