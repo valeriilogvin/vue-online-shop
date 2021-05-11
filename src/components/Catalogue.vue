@@ -1,7 +1,7 @@
 <template>
     <div class="catalogue">
         <CatalogueItem
-            v-for="product in products"
+            v-for="product in PRODUCTS"
             :key="product.article"
             :product_data="product"
             @sendDataToParent="showChildArticleInConsole"
@@ -11,61 +11,36 @@
 
 <script>
     import CatalogueItem from "./CatalogueItem"
+    import {mapActions, mapGetters} from 'vuex'
+    
     export default {
         name: "Catalogue",
         components: {CatalogueItem},
         data() {
             return {
-                products: [
-                    {
-                        image : 'car1.png',
-                        name : 'car1',
-                        price: 100,
-                        article: 'T1',
-                        available: true,
-                    },
-                    {
-                        image : 'car2.png',
-                        name : 'car2',
-                        price: 200,
-                        article: 'T2',
-                        available: true,
-                    },
-                    {
-                        image : 'car3.png',
-                        name : 'car3',
-                        price: 300,
-                        article: 'T3',
-                        available: false,
-                    },
-                    {
-                        image : 'car4.png',
-                        name : 'car4',
-                        price: 400,
-                        article: 'T4',
-                        available: true,
-                    },
-                    {
-                        image : 'car5.png',
-                        name : 'car5',
-                        price: 500,
-                        article: 'T5',
-                        available: false,
-                    },
-                    {
-                        image : 'car6.png',
-                        name : 'car6',
-                        price: 600,
-                        article: 'T6',
-                        available: false,
-                    },
-                ]
+            
             }
         },
+        computed: {
+            ...mapGetters([
+                'PRODUCTS'
+            ])
+        },
         methods: {
+            ...mapActions([
+                'GET_PRODUCTS_FROM_API'
+            ]),
             showChildArticleInConsole(data){
                 console.log(data)
             }
+        },
+        mounted() {
+            this.GET_PRODUCTS_FROM_API()
+                .then((response) => {
+                    if(response.data){
+                        console.log('Data arrived!')
+                    }
+                })
         }
     }
 </script>
