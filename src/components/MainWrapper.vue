@@ -16,6 +16,18 @@
 </script>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    .container {
+        width: 1024px;
+        margin: auto;
+    }
     .main-wrapper {
         display: flex;
         flex-direction: column;
