@@ -2,7 +2,7 @@
     <div class="cart-item">
         <img
             class="cart-item__img"
-            :src=" require('../assets/img/' + cart_item_data.image) "
+            :src=" require('../../assets/img/' + cart_item_data.image) "
             alt=""
         >
         <div class="cart-item__info">
@@ -45,9 +45,6 @@
             decrementItem(){
                 this.$emit('decrement')
             }
-        },
-        mounted() {
-            this.$set(this.cart_item_data, 'quantity', 1)
         }
     }
 </script>

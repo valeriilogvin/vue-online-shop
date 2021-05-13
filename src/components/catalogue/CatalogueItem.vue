@@ -2,7 +2,7 @@
     <div class="catalogue-item">
         <div class="catalogue-item__img-block">
             <img
-                    :src=" require('../assets/img/' + product_data.image) "
+                    :src=" require('../../assets/img/' + product_data.image) "
                     alt=""
                     class="catalogue-item__img"
             >

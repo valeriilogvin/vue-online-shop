@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import CatalogueItem from "./CatalogueItem"
+    import CatalogueItem from "../catalogue/CatalogueItem"
     import {mapActions, mapGetters} from 'vuex'
     
     export default {
