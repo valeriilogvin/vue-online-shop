@@ -15,7 +15,7 @@
         </p>
         <button
                 class="catalogue-item__btn"
-                @click="sendDataToParent"
+                @click="addToCart"
         >
             Add to card
         </button>
@@ -34,8 +34,8 @@
             }
         },
         methods: {
-            sendDataToParent() {
-                this.$emit('sendDataToParent', this.product_data.article)
+            addToCart(){
+                this.$emit('addToCart',this.product_data)
             }
         }
     }
